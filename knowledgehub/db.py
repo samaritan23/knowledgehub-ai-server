@@ -60,6 +60,43 @@ def _chunks_table() -> sql.Composed:
     ).format(dimensions=sql.Literal(EMBEDDING_DIMENSIONS))
 
 
+def insert_document(
+    connection: psycopg.Connection,
+    document_id,
+    filename: str,
+    media_type: str,
+    storage_path: str,
+    created_at,
+) -> None:
+    execute(
+        connection,
+        """
+        INSERT INTO documents (id, filename, media_type, storage_path, created_at)
+        VALUES (%s, %s, %s, %s, %s)
+        """,
+        (document_id, filename, media_type, storage_path, created_at),
+    )
+
+
+def insert_chunk(
+    connection: psycopg.Connection,
+    chunk_id,
+    document_id,
+    ordinal: int,
+    text: str,
+    page: int,
+    embedding: list[float],
+) -> None:
+    execute(
+        connection,
+        """
+        INSERT INTO chunks (id, document_id, ordinal, text, page, embedding)
+        VALUES (%s, %s, %s, %s, %s, %s)
+        """,
+        (chunk_id, document_id, ordinal, text, page, embedding),
+    )
+
+
 def init_db() -> None:
     with connect() as connection:
         execute(connection, STATIC_STATEMENTS[0])
