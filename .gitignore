@@ -152,6 +152,9 @@ activemq-data/
 # Environments
 .env
 .envrc
+
+# Uploaded documents
+storage/
 .venv
 env/
 venv/
