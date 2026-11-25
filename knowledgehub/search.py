@@ -72,9 +72,6 @@ def search(question: str) -> SearchResult:
     refused = (best_cosine is None or best_cosine < MIN_COSINE_SIMILARITY) and (
         best_keyword_rank is None or best_keyword_rank > MAX_KEYWORD_RANK
     )
-    if refused:
-        return SearchResult(passages=[], refused=True)
-
     scores: dict[str, float] = {}
     passages: dict[str, Passage] = {}
     for rank, row in enumerate(vector_rows, start=1):
@@ -89,7 +86,7 @@ def search(question: str) -> SearchResult:
     ordered = sorted(scores, key=scores.get, reverse=True)[:RESULT_TOP_K]
     return SearchResult(
         passages=[passages[chunk_id] for chunk_id in ordered],
-        refused=False,
+        refused=refused,
     )
 
 

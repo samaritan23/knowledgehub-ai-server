@@ -1,0 +1,50 @@
+{"id": "q01", "question": "What is the notice period?", "should_refuse": false, "expected_text": "60 days"}
+{"id": "q02", "question": "How much written notice is required?", "should_refuse": false, "expected_text": "60 days"}
+{"id": "q03", "question": "How long is the notice requirement?", "should_refuse": false, "expected_text": "60 days"}
+{"id": "q04", "question": "What notice does the offer require?", "should_refuse": false, "expected_text": "60 days"}
+{"id": "q05", "question": "Tell me the notice length.", "should_refuse": false, "expected_text": "60 days"}
+{"id": "q06", "question": "Is the required notice 60 days?", "should_refuse": false, "expected_text": "60 days"}
+{"id": "q07", "question": "What does the document say about giving notice?", "should_refuse": false, "expected_text": "60 days"}
+{"id": "q08", "question": "How many days of notice must be given?", "should_refuse": false, "expected_text": "60 days"}
+{"id": "q09", "question": "What is the written notice requirement?", "should_refuse": false, "expected_text": "60 days"}
+{"id": "q10", "question": "Summarize the notice term.", "should_refuse": false, "expected_text": "60 days"}
+{"id": "q11", "question": "What is my annual salary?", "should_refuse": true}
+{"id": "q12", "question": "Who is my manager?", "should_refuse": true}
+{"id": "q13", "question": "Where is the office located?", "should_refuse": true}
+{"id": "q14", "question": "How much vacation time do I get?", "should_refuse": true}
+{"id": "q15", "question": "Do I get health insurance?", "should_refuse": true}
+{"id": "q16", "question": "What is the job title?", "should_refuse": true}
+{"id": "q17", "question": "When do I start?", "should_refuse": true}
+{"id": "q18", "question": "Is the role remote?", "should_refuse": true}
+{"id": "q19", "question": "What is the signing bonus?", "should_refuse": true}
+{"id": "q20", "question": "How many shares do I receive?", "should_refuse": true}
+{"id": "q21", "question": "Which team will I join?", "should_refuse": true}
+{"id": "q22", "question": "Who do I report to?", "should_refuse": true}
+{"id": "q23", "question": "What is my base pay?", "should_refuse": true}
+{"id": "q24", "question": "Does the offer include equity?", "should_refuse": true}
+{"id": "q25", "question": "What is the annual bonus?", "should_refuse": true}
+{"id": "q26", "question": "Is lunch provided?", "should_refuse": true}
+{"id": "q27", "question": "What is the work location?", "should_refuse": true}
+{"id": "q28", "question": "Can I work from home?", "should_refuse": true}
+{"id": "q29", "question": "What is the employment type?", "should_refuse": true}
+{"id": "q30", "question": "Who approved this offer?", "should_refuse": true}
+{"id": "q31", "question": "What is the department name?", "should_refuse": true}
+{"id": "q32", "question": "What equipment will I receive?", "should_refuse": true}
+{"id": "q33", "question": "Is there a retirement plan?", "should_refuse": true}
+{"id": "q34", "question": "What is the medical coverage?", "should_refuse": true}
+{"id": "q35", "question": "Do I get a company phone?", "should_refuse": true}
+{"id": "q36", "question": "What is the shift schedule?", "should_refuse": true}
+{"id": "q37", "question": "Is weekend work required?", "should_refuse": true}
+{"id": "q38", "question": "What is the dress code?", "should_refuse": true}
+{"id": "q39", "question": "How is performance reviewed?", "should_refuse": true}
+{"id": "q40", "question": "What is the office address?", "should_refuse": true}
+{"id": "q41", "question": "Which city is the job in?", "should_refuse": true}
+{"id": "q42", "question": "What is the visa sponsorship policy?", "should_refuse": true}
+{"id": "q43", "question": "Do I need to relocate?", "should_refuse": true}
+{"id": "q44", "question": "What is the start month?", "should_refuse": true}
+{"id": "q45", "question": "Is overtime paid?", "should_refuse": true}
+{"id": "q46", "question": "What is the commission rate?", "should_refuse": true}
+{"id": "q47", "question": "Who is the hiring manager?", "should_refuse": true}
+{"id": "q48", "question": "What is the band level?", "should_refuse": true}
+{"id": "q49", "question": "Is parking provided?", "should_refuse": true}
+{"id": "q50", "question": "What is the laptop model?", "should_refuse": true}

@@ -3,7 +3,8 @@ import json
 from openai import OpenAI
 
 from knowledgehub.config import OPENAI_API_KEY, OPENAI_CHAT_MODEL
-from knowledgehub.search import Passage, search
+from knowledgehub.search import Passage, SearchResult, search
+from knowledgehub.usage import add_chat_tokens
 
 REFUSAL = "not in your documents"
 
@@ -12,11 +13,14 @@ def ask_question(question: str) -> dict:
     text = question.strip()
     if not text:
         raise ValueError("question is missing")
-    found = search(text)
+    return respond(text, search(text))
+
+
+def respond(question: str, found: SearchResult) -> dict:
     if found.refused:
         return {"status": "refused", "answer": REFUSAL, "citations": []}
 
-    answer, cited_ids = _write_answer(text, found.passages)
+    answer, cited_ids = _write_answer(question, found.passages)
     if answer.strip().lower() == REFUSAL:
         return {"status": "refused", "answer": REFUSAL, "citations": []}
 
@@ -60,6 +64,8 @@ def _write_answer(question: str, passages: list[Passage]) -> tuple[str, list[str
             },
         ],
     )
+    if response.usage is not None:
+        add_chat_tokens(response.usage.prompt_tokens, response.usage.completion_tokens)
     content = response.choices[0].message.content or ""
     payload = json.loads(content)
     answer = str(payload.get("answer", "")).strip()
