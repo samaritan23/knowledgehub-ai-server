@@ -5,6 +5,7 @@ from knowledgehub.config import (
     OPENAI_API_KEY,
     OPENAI_EMBEDDING_MODEL,
 )
+from knowledgehub.usage import add_embedding_tokens
 
 BATCH_SIZE = 64
 
@@ -23,6 +24,8 @@ def embed_texts(texts: list[str]) -> list[list[float]]:
         )
         for item in response.data:
             vectors[start + item.index] = list(item.embedding)
+        if response.usage is not None:
+            add_embedding_tokens(response.usage.total_tokens)
     if any(vector is None or len(vector) != EMBEDDING_DIMENSIONS for vector in vectors):
         raise RuntimeError("embedding response was incomplete")
     return vectors
